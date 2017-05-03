@@ -1,44 +1,56 @@
 
+#include <iostream>
 
-#include <cstdlib>
+#include <string>
 
 using namespace std;
 
 
-void start(int *q, string *username){
-    
-    
+void start(){
+    string u;
+    char c;
+    c = '0';
     bool haschosen;
+    haschosen = true;
     cout << "Wecome to the Quiz App " << endl  << " Please type your username " << endl;
-    cin >> getline(username, 100);
-    cout << "Hello " + username + " What Quiz would you like to do?" << endl;
+    getline(cin,u,'\r');
+    cin.clear();
+    
+    cout << "Hello " << u << " What Quiz would you like to do?" << endl;
  
     
-    while(haschosen)
-    cout << "Type 1 for: History" << endl << "Type 2 for: Computer Science" << endl << "Type 3 for: Nature" << endl;
-    cin >> q;
+    while(haschosen == true){
     
-    switch(q){
+    cout << "Type 1 for: History" << endl << "Type 2 for: Computer Science" << endl << "Type 3 for: Nature" << endl;
+   
+    cin >> c;
+    cin.clear();
+    
+    switch(c){
         
-        case q == 1 :
+        case '1' :
             haschosen = false;
+            cout << "History" << endl;
             break;
         
-        case q == 2 :
+        case '2' :
             haschosen = false;
+            cout << "Type 1 for: History" << endl;
             break;    
         
-        case q == 3 :
+        case '3' :
             haschosen = false;
+            cout << "Type 1 for: History" << endl;
             break;  
             
         default  :
            cout << "Type 1,2 or 3" << endl;
+           haschosen = true;
             break;
            
     }
     
-   
+    }
     
     
     
@@ -52,11 +64,11 @@ void start(int *q, string *username){
 
 int main(int argc, char** argv) {
       string username;
-      int q;
+      string q;
       
-      void start(*q,*username);
+     start();
       
-      Quiz quiz(q,username);
+     // Quiz quiz(q,username);
       
       
     
